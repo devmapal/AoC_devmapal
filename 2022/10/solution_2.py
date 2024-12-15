@@ -58,7 +58,7 @@ with open("input") as a_file:
                 line_pixels.append("#")
             else:
                 line_pixels.append(".")
-            
+
             if len(line_pixels) == 40:
                 print("".join(line_pixels))
                 line_pixels = []

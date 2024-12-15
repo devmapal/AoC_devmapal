@@ -44,4 +44,4 @@ for line in lines:
         elem = stacks[start].pop()
         stacks[end].append(elem)
 
-print("".join([stacks[index].pop() for index in range(1, len(stacks)+1)]))
+print("".join([stacks[index].pop() for index in range(1, len(stacks) + 1)]))

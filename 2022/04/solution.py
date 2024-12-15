@@ -8,7 +8,8 @@ class Range:
 
     def contains(self, other: "Range"):
         return other.start >= self.start and other.end <= self.end
-        
+
+
 result = 0
 with open("input") as a_file:
     for line in a_file.readlines():

@@ -1,6 +1,9 @@
 def visible_score(grid, x, y):
     return (
-        trees_visible_east(grid, x, y) * trees_visible_north(grid, x, y) * trees_visible_south(grid, x, y) * trees_visible_west(grid, x, y)
+        trees_visible_east(grid, x, y)
+        * trees_visible_north(grid, x, y)
+        * trees_visible_south(grid, x, y)
+        * trees_visible_west(grid, x, y)
     )
 
 
@@ -12,18 +15,18 @@ def trees_visible_west(grid, x, y):
         score += 1
         if elem >= grid[y][x]:
             break
-    
+
     return score
 
 
 def trees_visible_east(grid, x, y):
     score = 0
-    row = grid[y][x+1:]
+    row = grid[y][x + 1 :]
     for elem in row:
         score += 1
         if elem >= grid[y][x]:
             break
-    
+
     return score
 
 
@@ -35,18 +38,18 @@ def trees_visible_north(grid, x, y):
         score += 1
         if elem >= grid[y][x]:
             break
-    
+
     return score
 
 
 def trees_visible_south(grid, x, y):
     score = 0
-    column = [row[x] for row in grid][y+1:]
+    column = [row[x] for row in grid][y + 1 :]
     for elem in column:
         score += 1
         if elem >= grid[y][x]:
             break
-    
+
     return score
 
 

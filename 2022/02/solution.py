@@ -1,8 +1,10 @@
 from typing import Literal
 
-class Shape():
+
+class Shape:
     def __init__(self, points):
         self.points = points
+
 
 class Rock(Shape):
     beats = "Scissor"
@@ -10,11 +12,13 @@ class Rock(Shape):
     def __init__(self):
         super().__init__(1)
 
+
 class Paper(Shape):
     beats = "Rock"
 
     def __init__(self):
         super().__init__(2)
+
 
 class Scissor(Shape):
     beats = "Paper"
@@ -22,13 +26,15 @@ class Scissor(Shape):
     def __init__(self):
         super().__init__(3)
 
+
 def from_char(c: Literal["A", "B", "C", "X", "Y", "Z"]) -> Shape:
     if c in ["A", "X"]:
-        return Rock();
+        return Rock()
     elif c in ["B", "Y"]:
         return Paper()
     else:
         return Scissor()
+
 
 total_points = 0
 with open("input") as a_file:

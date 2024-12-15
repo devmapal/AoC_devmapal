@@ -35,16 +35,15 @@ class Map:
 
     def height_at(self, position: Position):
         return self.heightmap[position.row][position.column]
-    
+
     def get_positions_with_elevation(self, elevation: int) -> Sequence[Position]:
         positions = []
         for row in range(len(self.heightmap)):
             for column in range(len(self.heightmap[row])):
                 if self.heightmap[row][column] == elevation:
                     positions.append(Position(row, column))
-        
-        return positions
 
+        return positions
 
     @classmethod
     def from_file(cls: "Map", input: str):

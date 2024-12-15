@@ -7,11 +7,12 @@ class Range:
     end: int
 
     def overlaps_with(self, other: "Range"):
-        return \
-            other.start <= self.start <= other.end or \
-            other.start <= self.end <= other.end or \
-            self.start <= other.start <= self.end or \
-            self.start <= other.end <= self.end
+        return (
+            other.start <= self.start <= other.end
+            or other.start <= self.end <= other.end
+            or self.start <= other.start <= self.end
+            or self.start <= other.end <= self.end
+        )
 
 
 result = 0
